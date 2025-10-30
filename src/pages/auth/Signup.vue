@@ -60,7 +60,7 @@ import { toast } from 'vue-sonner'
 import { useRouter } from 'vue-router'
 
 // UI Components
-import Button from '@/components/ui/Button/Button.vue'
+import Button from '@/components/ui/button/Button.vue'
 import Input from '@/components/ui/input/Input.vue'
 import Label from '@/components/ui/label/Label.vue'
 import Card from '@/components/ui/card/Card.vue'
