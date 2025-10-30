@@ -9,7 +9,7 @@
       </ul>
     </div>
     <div class="flex gap-3">
-      <router-link to="/login">
+      <router-link to="/auth/login">
         <Button class="hover:bg-sky-800 hover:text-white bg-skyblue text-white" variant="outline">
           Login
         </Button>

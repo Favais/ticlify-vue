@@ -16,7 +16,7 @@ export const useTicketStore = defineStore('tickets', () => {
     const tickets = ref<Ticket[]>([])
     const loading = ref(false)
     const error = ref<string | null>(null)
-    const apiUrl = 'http://localhost:5000'
+    const apiUrl = (import.meta.env.VITE_API_URL as string) || 'http://localhost:5000'
 
     const fetchTickets = async () => {
         try {

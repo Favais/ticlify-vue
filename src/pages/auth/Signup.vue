@@ -92,7 +92,8 @@ async function handleSubmit() {
   }
 
   try {
-    const res = await axios.post('http://localhost:5000/user', {
+    const base = (import.meta.env.VITE_API_URL as string) || 'http://localhost:5000'
+    const res = await axios.post(`${base}/user`, {
       name: name.value,
       email: email.value,
       password: password.value

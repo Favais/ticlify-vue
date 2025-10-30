@@ -67,13 +67,13 @@ import { toast } from "vue-sonner"
 import { useRouter } from "vue-router"
 
 // UI Components
-import Button from "@/components/ui/button/button.vue"
-import Input from "@/components/ui/input/input.vue"
-import Label from "@/components/ui/label/label.vue"
-import Card from "@/components/ui/card/card.vue"
-import CardContent from "@/components/ui/card/cardcontent.vue"
-import CardHeader from "@/components/ui/card/cardheader.vue"
-import CardTitle from "@/components/ui/card/cardtitle.vue"
+import Button from "@/components/ui/button/Button.vue"
+import Input from "@/components/ui/input/Input.vue"
+import Label from "@/components/ui/label/Label.vue"
+import Card from "@/components/ui/card/Card.vue"
+import CardContent from "@/components/ui/card/CardContent.vue"
+import CardHeader from "@/components/ui/card/CardHeader.vue"
+import CardTitle from "@/components/ui/card/CardTitle.vue"
 
 // State
 const email = ref("")
@@ -103,7 +103,8 @@ async function handleSubmit() {
   }
 
   try {
-    const res = await axios.get("http://localhost:5000/user") // ✅ make sure db.json has "users"
+            const base = (import.meta.env.VITE_API_URL as string) || 'http://localhost:5000'
+            const res = await axios.get(`${base}/user`)
     const foundUser = res.data.find((u: any) => u.email === email.value)
 
     if (foundUser && foundUser.password === password.value) {
